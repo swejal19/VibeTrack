@@ -13,18 +13,6 @@
 
 ---
 
-## 📋 Table of Contents
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Features](#features)
-- [Installation & Setup](#installation--setup)
-- [Usage](#usage)
-- [ML Model Details](#ml-model-details)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
 ## 🛠️ Tech Stack
 
 ### Frontend

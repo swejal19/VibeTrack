@@ -1,4 +1,4 @@
-# 🎵 VibeTrack: AI-Based Emotion-Aware Music Recommender System
+# 🎵 VibeTrack: AI-Based Emotion-Detection Music Recommender System
 
 > An intelligent, full-stack web application that detects your emotions in real-time and curates personalized music playlists that match your mood.
 

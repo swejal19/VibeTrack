@@ -227,25 +227,4 @@ jupyter notebook baseline_model.ipynb
 
 ---
 
-## ⚙️ Environment Variables
-
-**Backend (.env)**
-```
-FLASK_ENV=development
-DEBUG=True
-DATABASE_URL=mysql+pymysql://user:password@localhost/vibetrack
-SPOTIFY_CLIENT_ID=your_id
-SPOTIFY_CLIENT_SECRET=your_secret
-SPOTIFY_REDIRECT_URI=http://localhost:5000/callback
-JWT_SECRET_KEY=your_secret_key_here
-JWT_ALGORITHM=HS256
-```
-
-**Frontend (.env)**
-```
-REACT_APP_API_URL=http://localhost:5000
-REACT_APP_SPOTIFY_CLIENT_ID=your_id
-```
----
-
 **Made with ❤️ for emotion-aware music discovery**

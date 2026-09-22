@@ -1,0 +1,12 @@
+Flask
+Flask-Cors
+Flask-JWT-Extended
+python-dotenv
+Flask-Session
+Flask-Mail
+Flask-MySQLdb
+gunicorn
+requests
+werkzeug
+opencv-python-headless
+tensorflow==2.20.0

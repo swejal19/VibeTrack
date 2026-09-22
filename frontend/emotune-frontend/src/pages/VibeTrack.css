@@ -1,0 +1,169 @@
+
+.vibe-track-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(25, 25, 25, 0.518), rgba(20, 19, 19, 0.249));
+}
+
+.vibe-track-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vibe-track-page .vibe-blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  filter: blur(50px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.vibe-track-page .vibe-blob-left {
+  left: -18%;
+  top: -10%;
+  background: radial-gradient(circle at 25% 25%, rgba(255,110,172,0.85), rgba(255,110,172,0.12));
+}
+
+.vibe-track-page .vibe-blob-right {
+  right: -15%;
+  bottom: -10%;
+  background: radial-gradient(circle at 75% 75%, rgba(68,210,255,0.65), rgba(123,92,255,0.10));
+}
+
+.vibe-track-page .vibe-halo {
+  position: absolute;
+  width: 620px;
+  height: 420px;
+  left: 50%;
+  top: 140px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(123,92,255,0.10), transparent);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vibe-track-page .vibe-container {
+  position: relative;
+  z-index: 5;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vibe-track-page .vibe-hero {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.vibe-track-page .vibe-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: var(--text-color);
+}
+
+.vibe-track-page .vibe-sub {
+  color: var(--secondary-text-color);
+  margin-top: 5px;
+}
+
+.vibe-track-page .vibe-top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.vibe-track-page .webcam-card {
+  width: 760px;
+  max-width: 100%;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 15px 40px rgba(6, 6, 20, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.vibe-track-page .webcam-card .media-viewport {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+.vibe-track-page .vibe-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  width: 100%;
+  margin: 10px 0 20px 0;
+}
+
+.vibe-track-page .vibe-card {
+  background: rgba(255, 255, 255, 0.078);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 18px rgba(6,6,20,0.27);
+  backdrop-filter: blur(6px);
+  height: fit-content;
+}
+
+.vibe-track-page .song-wrapper {
+  position: relative;
+}
+
+.vibe-track-page .song-wrapper .like-btn {
+  position: absolute;
+  right: 8px;
+  top: 20px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 6px 9px;
+  cursor: pointer;
+}
+
+.vibe-track-page .vibe-error {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+@media (max-width: 900px) {
+  .vibe-track-page .vibe-bottom {
+    grid-template-columns: 1fr;
+  }
+  .vibe-track-page .vibe-halo {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .vibe-track-page .vibe-title {
+    font-size: 1.6rem;
+  }
+  .vibe-track-page .webcam-card {
+    padding: 18px;
+  }
+}

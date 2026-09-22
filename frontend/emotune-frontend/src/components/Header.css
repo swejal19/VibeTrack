@@ -1,0 +1,272 @@
+
+.modern-header {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 4px 90px rgba(66, 0, 75, 0.685)
+}
+
+/* Inner container */
+.modern-header .header-inner {
+  margin: auto;
+  padding: 0 55px;
+  display: flex;
+  align-items: center;
+  
+  z-index: 9999;
+  justify-content: space-between;
+}
+
+/* Logo */
+.modern-header .logo {
+  font-size: clamp(1.3rem, 2vw + 1rem, 2rem);
+  font-weight: 800;
+  color: white;
+  margin: 10px 0px;
+  cursor: pointer;
+  letter-spacing: -1px;
+  transition: 0.3s ease;
+}
+
+.modern-header .logo:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+/* Navigation */
+.nav-menu-modern {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn {
+  border: 1em;
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+  padding: 0.7em 1em;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 
+            rgba(255, 255, 255, 0.438);
+  -webkit-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  color: white;
+}
+.login,.signup{
+  font-size: 16px;
+  padding: 0.7em 2em;
+}
+.nav-btn .text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: 
+transparent;
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+}
+
+.nav-btn:after {
+  content: "";
+  border-radius: 10px;
+  position: absolute;
+  margin: 2px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: 
+#0e0e10;
+}
+
+.nav-btn:hover {
+  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+  box-shadow: 0 12px 24px 
+rgba(128, 128, 128, 0.1);
+}
+
+.nav-btn:hover .text {
+  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+}
+
+.primary::after{
+  background: none;
+}
+.nav-btn.danger {
+  color: #ff5c5c;
+}
+
+/* Theme Toggle */
+.theme-toggle-modern {
+  background: none;
+  border: 2px solid var(--primary-color);
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.theme-toggle-modern:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .modern-header .header-inner {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-header .logo {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    letter-spacing: -0.5px;
+  }
+}
+
+.nav-btn.success {
+  background: rgba(30, 215, 96, 0.15);
+  border: 1px solid rgba(30, 215, 96, 0.4);
+  color: #1ed760 !important;
+  cursor: default;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.nav-btn.success:hover {
+  background: rgba(30, 215, 96, 0.22);
+  box-shadow: 0 0 8px rgba(30, 215, 96, 0.4);
+}
+
+.success.pulse {
+  animation: pulseGlow 1.5s ease-out 2;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0px rgba(30, 215, 96, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(30, 215, 96, 1);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(30, 215, 96, 0.5);
+  }
+}
+
+.nav-btn.spotify-btn:hover {
+  background: rgba(30, 215, 96, 0.2);
+  box-shadow: 0 0 8px rgba(30, 215, 96, 0.4);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.spotify-status-animate {
+  animation: fadeSlideIn 0.4s ease;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spotify-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1db954;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  box-shadow: 0 0 6px rgba(29, 185, 84, 0.8);
+  animation: spotifyPulse 1.6s infinite ease-in-out;
+}
+
+@keyframes spotifyPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+.spotify-badge {
+  background: rgba(29,185,84,0.2) !important;
+  color: #1db954 !important;
+  border: 1px solid rgba(29,185,84,0.4) !important;
+  box-shadow: 0 0 7px rgba(29,185,84,0.4);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: default !important;
+}
+.spotify-bars {
+  display: flex;
+  gap: 3px;
+}
+
+.spotify-bar {
+  width: 3px;
+  height: 8px;
+  background: #1db954;
+  border-radius: 3px;
+  animation: barDance 1s infinite ease-in-out;
+}
+
+.spotify-bar:nth-child(2) { animation-delay: 0.15s; }
+.spotify-bar:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes barDance {
+  0%, 100% { height: 6px; opacity: 0.7; }
+  50% { height: 14px; opacity: 1; }
+}
+.pulse {
+  animation: pulseEffect 1.2s ease-out;
+}
+
+@keyframes pulseEffect {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.spotify-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-left: 6px;
+  border: 1px solid #1db954;
+}
+
+.pulse {
+  animation: pulseAnim 0.5s ease-out;
+}
+
+@keyframes pulseAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+@media (max-width: 1030px) {
+  .nav-btn span.btn-text {
+    display: none;
+  }
+}
+@media (max-width: 790px) {
+  .nav-menu-modern {
+    gap: 9px;
+  }
+  .nav-btn{
+    padding: 0.7em 1em;
+  }
+}

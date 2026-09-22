@@ -1,0 +1,65 @@
+# =========================
+# Node / React (Frontend)
+# =========================
+/frontend/node_modules
+/frontend/build
+/frontend/.pnp
+/frontend/.pnp.js
+/frontend/emotune-frontend/.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Python / Backend + ML
+# =========================
+# Virtual environments
+venv/
+ml/venv/
+ENV/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.eggs/
+
+# Model checkpoints / training outputs
+*.h5
+*.hdf5
+*.ckpt
+*.pth
+*.pt
+*.pkl
+
+# =========================
+# Datasets (if large/raw)
+# =========================
+/ml/data/raw/*
+!/ml/data/raw/.gitkeep   # keep empty folder structure
+/ml/data/processed/*
+!/ml/data/processed/.gitkeep
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+node_modules
+
+# production build
+build/

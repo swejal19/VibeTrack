@@ -6,6 +6,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from flask import Blueprint, request, jsonify
 import tensorflow as tf
+from huggingface_hub import hf_hub_download
 
 tf.config.set_visible_devices([], 'GPU') 
 tf.config.threading.set_intra_op_parallelism_threads(1)
@@ -14,14 +15,36 @@ tf.config.threading.set_inter_op_parallelism_threads(1)
 # Paths & Model Load
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "best_emotion_model.h5")
 
-print(f"🔹 Loading emotion model from: {MODEL_PATH}")
 model = None
+
+MODEL_REPO = "Swejal/vibetrack-emotion-model"
+MODEL_FILENAME = "best_emotion_model.h5"
 
 def get_model():
     global model
     if model is None:
-        print("🔹 Lazy-loading emotion model...")
-        model = load_model(MODEL_PATH)
+        # 1. Check if model exists locally
+        if os.path.exists(MODEL_PATH):
+            print(f"🔹 Loading local emotion model from: {MODEL_PATH}")
+            model_path = MODEL_PATH
+
+        # 2. Otherwise download from Hugging Face
+        else:
+            print("⚠️ Local model not found.")
+            print("🔹 Downloading emotion model from Hugging Face...")
+
+            model_path = hf_hub_download(
+                repo_id=MODEL_REPO,
+                filename=MODEL_FILENAME,
+                repo_type="model"
+            )
+
+            print(f"✅ Model downloaded to: {model_path}")
+
+        # 3. Load the model
+        model = load_model(model_path)
+
+        print("✅ Emotion model loaded successfully!")
     return model
 
 #emotion labels
